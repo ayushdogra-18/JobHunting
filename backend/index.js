@@ -31,7 +31,7 @@ app.use(cookieParser());
 
 //for production---------------------------->
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://jobhunt-online.vercel.app"],
+  origin: ["https://jobhunt-online.vercel.app"],
   credentials: true,
 };
 
