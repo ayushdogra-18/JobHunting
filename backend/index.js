@@ -30,13 +30,27 @@ app.use(cookieParser());
 
 
 //for production---------------------------->
+const allowedOrigins = [
+  "http://localhost:5173",           // dev
+  "https://jobhunt-online.vercel.app" // production
+];
+
 const corsOptions = {
-  origin: ["https://jobhunt-online.vercel.app"],
-  credentials: true,
+  origin: function(origin, callback) {
+    // allow server-to-server requests or Postman
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true, // allow cookies
 };
 
 app.use(cors(corsOptions));
-// app.options("*", cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 
 
