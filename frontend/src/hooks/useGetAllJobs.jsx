@@ -8,7 +8,7 @@ const useGetAllJobs = () => {
   const dispatch = useDispatch();
     const {searchedQuery} = useSelector(store=>store.job);
     useEffect(()=>{
-          if (!user) return;
+        //   if (!user) return;
         const fetchAllJobs = async () => {
     //         try {
     //             const res = await axios.get(`${JOB_API_END_POINT}/get?keyword=${searchedQuery}`,{withCredentials:true});
