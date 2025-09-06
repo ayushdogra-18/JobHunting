@@ -16,12 +16,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
-const corsOptions = {
-    origin:'http://localhost:5173',
-    credentials:true
-}
+// const corsOptions = {
+//     origin:'http://localhost:5173',
+//     credentials:true
+// }
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 
 
@@ -30,13 +30,13 @@ app.use(cors(corsOptions));
 
 
 //for production---------------------------->
-// const corsOptions = {
-//   origin: ["http://localhost:5173", "https://job-hunt-portal-18.vercel.app"],
-//   credentials: true,
-// };
+const corsOptions = {
+  origin: ["http://localhost:5173", "https://jobhunt-online.vercel.app"],
+  credentials: true,
+};
 
-// app.use(cors(corsOptions));
-// app.options("*", cors(corsOptions));
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 
 
