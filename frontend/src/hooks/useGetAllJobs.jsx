@@ -43,7 +43,7 @@ const useGetAllJobs = () => {
     }
   };
   fetchAllJobs();
-}, [user, searchedQuery, dispatch]);
+}, [searchedQuery, dispatch]);
 }
 
 export default useGetAllJobs
