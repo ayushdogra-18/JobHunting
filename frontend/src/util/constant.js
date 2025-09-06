@@ -2,7 +2,7 @@
 const BASE_URL =
   import.meta.env.MODE === "development"
     ? "http://localhost:8000"
-    : "https://jobhunt-x51o.onrender.com";
+    : "https://jobhunting-1.onrender.com";
     
     console.log("MODE:", import.meta.env.MODE);
     console.log("BASE_URL:", BASE_URL);
